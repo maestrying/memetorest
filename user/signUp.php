@@ -22,18 +22,23 @@
     <div class="content">
         <div class="content_container" style="height: 82vh;">
             <div class="form_block">
-                <!-- <p class="log_err">неверный логин или пароль</p> -->
+                <?php
+                    if (isset($_SESSION['message'])){
+                        echo ' <p class="err">'.$_SESSION['message'].'</p> ';
+                        unset($_SESSION['message']);
+                    }
+                ?>
                 <p class="form_header">вместе мы сила</p>
-                <form action="">
+                <form action="../php/register.php" method="post">
                     <label>тут логин</label>
-                    <input type="text">
+                    <input type="text" name="login">
                     <label>тут почта</label>
-                    <input type="email">
+                    <input type="email" name="email">
                     <label>тут пароль</label>
-                    <input type="password">
+                    <input type="password" name="password">
                     <label>тут еще раз пароль</label>
-                    <input type="password">
-                    <button>влететь с двух ног</button>
+                    <input type="password" name="submit_password">
+                    <button type="submit">влететь с двух ног</button>
                 </form>
                 <p class="form_link">ты уже с нами с нами? - <a href="signIn.php">залетай</a></p>
             </div>

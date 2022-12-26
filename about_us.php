@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +18,7 @@
         <div class="menu">
             <a class="menu_link" href="index.php" style="padding: 0 1.4vw">пикчи</a>
             <a class="menu_link" href="#" style="background-image: url('assets/svg/1.svg'); background-repeat: no-repeat; background-position: 0% bottom; background-size: 95%; padding: 0 0.8vw"><p>что это такое?</p></a>
-            <a class="menu_link" href="user/profile.php" style="padding: 0 1vw">мой уголок</a>
+            <a class="menu_link" href="user/profile.php<?php if (isset($_SESSION['id'])) echo ("?id=".$_SESSION['id']); ?>" style="padding: 0 1vw">мой уголок</a>
         </div>
         <button>сделать вброс</button>
     </header>
@@ -57,8 +61,8 @@
         </div>
         <div class="menu">
             <a class="menu_link" href="index.php">пикчи</a>
-            <a class="menu_link" href="#">что это такое?</a>
-            <a class="menu_link" href="user/profile.php">мой уголок</a>
+            <a class="menu_link" href="">что это такое?</a>
+            <a class="menu_link" href="user/profile.php<?php if (isset($_SESSION['id'])) echo ("?id=".$_SESSION['id']); ?>">мой уголок</a>
         </div>
         <div class="git_block">
             <p>github</p>

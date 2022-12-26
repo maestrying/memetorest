@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +14,7 @@
 </head>
 <body>
     <header>
-        <img class="logo" src="../assets/logo.svg"></img>
+        <img class="logo" src="../assets/logo.svg">
         <div class="menu">
             <a class="menu_link" href="../index.php" style="padding: 0 1.4vw">пикчи</a>
             <a class="menu_link" href="../about_us.php" style="padding: 0 0.8vw">что это такое?</a>
@@ -23,13 +27,18 @@
         <div class="content_container" style="height: 82vh;">
             <div class="form_block">
                 <p class="form_header">вход в кайфодром</p>
-                <!-- <p class="log_err">неверный логин или пароль</p> -->
-                <form action="">
+                <?php
+                    if (isset($_SESSION['message'])){
+                        echo ' <p class="err">'.$_SESSION['message'].'</p> ';
+                        unset($_SESSION['message']);
+                    }
+                ?>
+                <form action="../php/auth.php" method="post">
                     <label>тут логин</label>
-                    <input type="text">
+                    <input type="text" name="login">
                     <label>тут пароль</label>
-                    <input type="password">
-                    <button>вернуться домой</button>
+                    <input type="password" name="password">
+                    <button type="submit">вернуться домой</button>
                 </form>
                 <p class="form_link">ты еще не с нами? - <a href="signUp.php">регайся</a></p>
             </div>
@@ -56,6 +65,7 @@
             <a href="https://github.com/lonelywh1te" class="git_link" target="_blank">lonelywh1te</a>
         </div>
     </footer>
+</style>
 </body>
-<script> </script>
+<script></script>
 </html>
