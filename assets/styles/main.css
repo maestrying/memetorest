@@ -95,7 +95,7 @@ footer p {
 
 footer .git_block {
     position: relative;
-    width: 16vw;
+    width: 20vw;
     height: 6vh;
     border: 2px solid #fff;
     display: flex;
@@ -457,7 +457,7 @@ footer .git_block p {
 form {
     display: flex;
     flex-direction: column;
-    margin-top: 2vh;
+    margin-top: 1vh;
 }
 
 label {
@@ -484,12 +484,18 @@ input {
 }
 
 .form_block {
-    margin-top: 20vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 40vh;
     align-items: center;
+}
+
+.log_err {
+    position: absolute;
+    top: -2.8vh;
+    font-size: 11px;
+    color: #0A1B79;
 }
 
 .form_header {
@@ -505,7 +511,7 @@ input {
     text-decoration: underline;
 }
 
-.signIn_gif1 {
+.sign_gif1 {
     position: absolute;
     width: 248px;
     height: 248px;
@@ -518,7 +524,7 @@ input {
     background-repeat: no-repeat;
 }
 
-.signIn_gif2 {
+.sign_gif2 {
     position: absolute;
     width: 284px;
     height: 355px;
@@ -531,13 +537,52 @@ input {
     background-repeat: no-repeat;
 }
 
-.signIn_gif3 {
+.sign_gif3 {
     position: absolute;
     width: 205px;
     height: 154px;
     left: 80vw;
     top: 22vh;
     background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/gif/gif3.gif);
+    box-shadow: 14px 14px 0px #1F3FEF;
+    border-radius: 3px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sign_gif4 {
+    position: absolute;
+    width: 229px;
+    height: 229px;
+    left: 14vw;
+    top: 26vh;
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/gif/gif4.gif);
+    box-shadow: -14px -14px 0px #1F3FEF;
+    border-radius: 3px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sign_gif5 {
+    position: absolute;
+    width: 337px;
+    height: 253px;
+    left: 70vw;
+    top: 14vh;
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/gif/gif2.gif);
+    box-shadow: -14px 14px 0px #1F3FEF;
+    border-radius: 3px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sign_gif6 {
+    position: absolute;
+    width: 167px;
+    height: 136px;
+    left: 4vw;
+    top: 66vh;
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/gif/gif5.gif);
     box-shadow: 14px 14px 0px #1F3FEF;
     border-radius: 3px;
     background-size: contain;

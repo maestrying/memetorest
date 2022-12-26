@@ -12,17 +12,18 @@
     <header>
         <img class="logo" src="/assets/logo.svg"></img>
         <div class="menu">
-            <a class="menu_link" href="index.php" style="padding: 0 1.4vw">пикчи</a>
-            <a class="menu_link" href="about_us.php" style="padding: 0 0.8vw">что это такое?</a>
+            <a class="menu_link" href="/index.php" style="padding: 0 1.4vw">пикчи</a>
+            <a class="menu_link" href="/about_us.php" style="padding: 0 0.8vw">что это такое?</a>
             <a class="menu_link" href="profile.php" style="padding: 0 1vw">мой уголок</a>
         </div>
         <button>сделать вброс</button>
     </header>
 
     <div class="content">
-        <div class="content_container" style="height: 82vh; flex-direction: column; justify-content: flex-start;">
+        <div class="content_container" style="height: 82vh;">
             <div class="form_block">
                 <p class="form_header">вход в кайфодром</p>
+                <!-- <p class="log_err">неверный логин или пароль</p> -->
                 <form action="">
                     <label>тут логин</label>
                     <input type="text">
@@ -30,12 +31,12 @@
                     <input type="password">
                 </form>
                 <button>вернуться домой</button>
-                <p class="form_link">ты еще не с нами? - <a href="#">регайся</a></p>
+                <p class="form_link">ты еще не с нами? - <a href="signUp.php">регайся</a></p>
             </div>
 
-            <div class="signIn_gif1"></div>
-            <div class="signIn_gif2"></div>
-            <div class="signIn_gif3"></div>
+            <div class="sign_gif1"></div>
+            <div class="sign_gif2"></div>
+            <div class="sign_gif3"></div>
         </div>
     </div>
 
