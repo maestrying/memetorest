@@ -35,7 +35,7 @@
                 <div class="mem_carousel">
                     <div class="scroll_btn_l"></div>
                     <div class="mem_img">
-                        <img src="assets/img/дед.jpg" style="border-radius: 3px;"> <!-- тут мем -->
+                        <img src="assets/img/ded.jpg" style="border-radius: 3px;"> <!-- тут мем -->
                     </div>
                     <div class="scroll_btn_r"></div>
                 </div>

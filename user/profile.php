@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEMETOREST</title>
     <link rel="icon" type="image/x-icon" href="assets/fav.jpg">
-    <link rel="stylesheet" href="/assets/styles/main.css">
+    <link rel="stylesheet" href="../assets/styles/main.css">
 </head>
 <body>
     <header>
         <img class="logo" src="/assets/logo.svg"></img>
         <div class="menu">
-            <a class="menu_link" href="index.php" style="padding: 0 1.4vw">пикчи</a>
-            <a class="menu_link" href="about_us.php" style="padding: 0 0.8vw">что это такое?</a>
-            <a class="menu_link" href="#" style="background-image: url('assets/svg/2.svg'); background-repeat: no-repeat;  background-position: 0% bottom; background-size: 100%; padding: 0 1vw">мой уголок</a>
+            <a class="menu_link" href="../index.php" style="padding: 0 1.4vw">пикчи</a>
+            <a class="menu_link" href="../about_us.php" style="padding: 0 0.8vw">что это такое?</a>
+            <a class="menu_link" href="#" style="background-image: url('../assets/svg/2.svg'); background-repeat: no-repeat;  background-position: 0% bottom; background-size: 100%; padding: 0 1vw">мой уголок</a>
         </div>
         <button>сделать вброс</button>
     </header>
@@ -27,13 +27,13 @@
 
     <footer>
         <div class="footer_logo">
-            <img class="logo" src="/assets/logo_white.svg"></img>
+            <img class="logo" src="../assets/logo_white.svg"></img>
             <p>© все права защищены</p>
         </div>
         <div class="menu">
-            <a class="menu_link" href="/index.php">пикчи</a>
-            <a class="menu_link" href="/about_us.php">что это такое?</a>
-            <a class="menu_link" href="profile.php">мой уголок</a>
+            <a class="menu_link" href="../index.php">пикчи</a>
+            <a class="menu_link" href="../about_us.php">что это такое?</a>
+            <a class="menu_link" href="#">мой уголок</a>
         </div>
         <div class="git_block">
             <p>github</p>

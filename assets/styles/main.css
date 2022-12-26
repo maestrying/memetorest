@@ -1,21 +1,21 @@
 @font-face {
     font-family: 'CASaygon-Light.ttf';
-    src: url(/assets/fonts/CASaygon-Light.ttf);
+    src: url(../fonts/CASaygon-Light.ttf);
 }
 
 @font-face {
     font-family: 'CASaygon-Regular.ttf';
-    src: url(/assets/fonts/CASaygon-Regular.ttf);
+    src: url(../fonts/CASaygon-Regular.ttf);
 }
 
 @font-face {
     font-family: 'CASaygon-Bold.ttf';
-    src: url(/assets/fonts/CASaygon-Bold.ttf);
+    src: url(../fonts/CASaygon-Bold.ttf);
 }
 
 @font-face {
     font-family: 'DelaGothicOne-Regular.ttf';
-    src: url(/assets/fonts/DelaGothicOne-Regular.ttf);
+    src: url(../fonts/DelaGothicOne-Regular.ttf);
 }
 
 * {
@@ -188,7 +188,7 @@ footer .git_block p {
     height: 185px;
     left: 2vw;
     top: 26vh;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/img/крот.jpg);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../img/крот.jpg);
     box-shadow: -14px 14px 0px #1F3FEF;
     background-size: contain;
 }
@@ -198,7 +198,7 @@ footer .git_block p {
     height: 149px;
     left: 20vw;
     top: 16vh;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/img/брат.jpg);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../img/брат.jpg);
     box-shadow: -12px 12px 0px #1F3FEF;
     background-size: contain;
 }
@@ -208,7 +208,7 @@ footer .git_block p {
     height: 129px;
     left: 47vw;
     top: 20vh;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/img/трах.jpg);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../img/трах.jpg);
     box-shadow: -14px 14px 0px #1F3FEF;
     background-size: contain;
 }
@@ -218,7 +218,7 @@ footer .git_block p {
     height: 118px;
     left: 76vw;
     top: 18vh;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/img/пес.jpg);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../img/пес.jpg);
     box-shadow: -14px -14px 0px #1F3FEF;
     background-size: cover;
 }
@@ -228,7 +228,7 @@ footer .git_block p {
     height: 189px;
     left: 24vw;
     top: 46vh;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/img/байден.jpg);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../img/байден.jpg);
     box-shadow: 14px -14px 0px #1F3FEF;
     background-size: contain;
 }
@@ -238,7 +238,7 @@ footer .git_block p {
     height: 117px;
     left: 7vw;
     top: 70vh;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/img/хасбик.jpg);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../img/хасбик.jpg);
     box-shadow: -10px -10px 0px #1F3FEF;
     background-size: cover;
 }
@@ -248,7 +248,7 @@ footer .git_block p {
     height: 150px;
     left: 40vw;
     top: 68vh;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/img/скала.jpg);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../img/скала.jpg);
     box-shadow: 14px 14px 0px #1F3FEF;
     background-size: contain;
 }
@@ -258,7 +258,7 @@ footer .git_block p {
     height: 197px;
     left: 68vw;
     top: 56vh;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/img/даун.jpg);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../img/даун.jpg);
     box-shadow: -14px 14px 0px #1F3FEF;
     background-size: contain;
 }
@@ -268,7 +268,7 @@ footer .git_block p {
     height: 162px;
     left: 84vw;
     top: 40vh;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/img/вумен.jpg);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../img/вумен.jpg);
     box-shadow: 14px 14px 0px #1F3FEF;
     background-size: contain;
 }
@@ -427,11 +427,11 @@ footer .git_block p {
 }
 
 .scroll_btn_r {
-    background: url(/assets/svg/arrov_r.svg);
+    background: url(../svg/arrov_r.svg);
 }
 
 .scroll_btn_l {
-    background: url(/assets/svg/arrov_l.svg);
+    background: url(../svg/arrov_l.svg);
     background-position: right;
 }
 
@@ -517,7 +517,7 @@ input {
     height: 248px;
     left: 70vw;
     top: 50vh;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/gif/gif1.gif);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../gif/gif1.gif);
     box-shadow: 14px -14px 0px #1F3FEF;
     border-radius: 3px;
     background-size: contain;
@@ -530,7 +530,7 @@ input {
     height: 355px;
     left: 8vw;
     top: 20vh;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/gif/gif6.gif);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../gif/gif6.gif);
     box-shadow: -14px -14px 0px #1F3FEF;
     border-radius: 3px;
     background-size: contain;
@@ -543,7 +543,7 @@ input {
     height: 154px;
     left: 80vw;
     top: 22vh;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/gif/gif3.gif);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../gif/gif3.gif);
     box-shadow: 14px 14px 0px #1F3FEF;
     border-radius: 3px;
     background-size: contain;
@@ -556,7 +556,7 @@ input {
     height: 229px;
     left: 14vw;
     top: 26vh;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/gif/gif4.gif);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../gif/gif4.gif);
     box-shadow: -14px -14px 0px #1F3FEF;
     border-radius: 3px;
     background-size: contain;
@@ -569,7 +569,7 @@ input {
     height: 253px;
     left: 70vw;
     top: 14vh;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/gif/gif2.gif);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../gif/gif2.gif);
     box-shadow: -14px 14px 0px #1F3FEF;
     border-radius: 3px;
     background-size: contain;
@@ -582,7 +582,7 @@ input {
     height: 136px;
     left: 4vw;
     top: 66vh;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/gif/gif5.gif);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../gif/gif5.gif);
     box-shadow: 14px 14px 0px #1F3FEF;
     border-radius: 3px;
     background-size: contain;
