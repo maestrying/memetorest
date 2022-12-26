@@ -14,7 +14,7 @@
         <div class="menu">
             <a class="menu_link" href="#" style="background-image: url('assets/svg/3.svg'); background-repeat: no-repeat;  background-position: 0% bottom; background-size: 100%; padding: 0 1.4vw">пикчи</a>
             <a class="menu_link" href="about_us.php" style="padding: 0 0.8vw">что это такое?</a>
-            <a class="menu_link" href="profile.php" style="padding: 0 1vw">мой уголок</a>
+            <a class="menu_link" href="profile/profile.php" style="padding: 0 1vw">мой уголок</a>
         </div>
         <button>сделать вброс</button>
     </header>
@@ -35,7 +35,7 @@
                 <div class="mem_carousel">
                     <div class="scroll_btn_l"></div>
                     <div class="mem_img">
-                        <img src="assets/img/вумен.jpg" style="border-radius: 3px;"> <!-- тут мем -->
+                        <img src="assets/img/дед.jpg" style="border-radius: 3px;"> <!-- тут мем -->
                     </div>
                     <div class="scroll_btn_r"></div>
                 </div>

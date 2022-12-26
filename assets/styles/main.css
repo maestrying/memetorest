@@ -29,8 +29,8 @@ body {
 }
 
 button {
-    width: 215px;
-    height: 38px;
+    padding: 0 2vw;
+    height: 5vh;
     border-style: none;
     background-color: transparent;
     border: 2px solid #1F3FEF;
@@ -84,7 +84,7 @@ footer {
     justify-content: center;
 }
 
-footer .menu a{
+footer .menu a {
     color: #fff;
 }
 
@@ -100,6 +100,7 @@ footer .git_block {
     border: 2px solid #fff;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 footer .git_block a {
@@ -126,7 +127,7 @@ footer .git_block p {
     display: flex;
     justify-content: space-between;
     align-self: center;
-    width: 24vw;
+    width: 32vw;
 }
 
 .menu_link a {
@@ -452,3 +453,93 @@ footer .git_block p {
     margin: 2vh 2vw;
 }
 
+            /* P R O F I L E */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+}
+
+label {
+    font-size: 0.8vw;
+    margin-top: 2vh;
+}
+
+input {
+    font-family: 'CASaygon-Light.ttf';
+    padding: 1.6vh 0;
+    padding-left: 1vw;
+    font-size: 16px;
+    width: 20vw;
+    margin-top: 1vh;
+    border: none;
+    background-color: rgba(31, 63, 239, 0.1);
+    border-radius: 3px;
+    outline: none;
+}
+
+.form_block button {
+    margin-top: 2vh;
+    padding: 0 4vw;
+}
+
+.form_block {
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40vh;
+    align-items: center;
+}
+
+.form_header {
+    font-size: 1.3vw;
+}
+
+.form_link, .form_link a {
+    margin-top: 0.8vh;
+    font-size: 0.8vw;
+}
+
+.form_link a {
+    text-decoration: underline;
+}
+
+.signIn_gif1 {
+    position: absolute;
+    width: 248px;
+    height: 248px;
+    left: 70vw;
+    top: 50vh;
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/gif/gif1.gif);
+    box-shadow: 14px -14px 0px #1F3FEF;
+    border-radius: 3px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.signIn_gif2 {
+    position: absolute;
+    width: 284px;
+    height: 355px;
+    left: 8vw;
+    top: 20vh;
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/gif/gif6.gif);
+    box-shadow: -14px -14px 0px #1F3FEF;
+    border-radius: 3px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.signIn_gif3 {
+    position: absolute;
+    width: 205px;
+    height: 154px;
+    left: 80vw;
+    top: 22vh;
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(/assets/gif/gif3.gif);
+    box-shadow: 14px 14px 0px #1F3FEF;
+    border-radius: 3px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
