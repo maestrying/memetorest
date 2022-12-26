@@ -1,3 +1,30 @@
+<?php
+    session_start();
+    include_once ('../php/connect.php');
+
+    if (!isset($_SESSION['id'])){
+        header("Location: signIn.php");
+    }
+    else {
+        $user_id = $_SESSION['id'];
+        $query = mysqli_query($conn,"select * from users, stats where id=user_id and id='$user_id'");
+        $user = $query->fetch_assoc();
+
+        if (!isset($user['login'])) {
+            header('Location: ../php/404.php');
+        }
+        else {
+            // получаем имя и статус пользователя
+            $username = $user['login'];
+            $status = $user['status'];
+            $posts = $user['published'];
+            $liked = $user['finded'];
+            $subscribers = $user['subscribers'];
+            $subscribes = $user['subscribes'];
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +42,11 @@
         <div class="menu">
             <a class="menu_link" href="../index.php" style="padding: 0 1.4vw">пикчи</a>
             <a class="menu_link" href="../about_us.php" style="padding: 0 0.8vw">что это такое?</a>
-            <a class="menu_link" href="#" style="background-image: url('../assets/svg/2.svg'); background-repeat: no-repeat;  background-position: 0% bottom; background-size: 100%; padding: 0 1vw">мой уголок</a>
+            <a class="menu_link" href="<?php
+            if ($user_id != $_SESSION['id']){
+                echo ('profile.php?id='.$_SESSION['id']);
+            }
+            ?>" style="background-image: url('../assets/svg/2.svg'); background-repeat: no-repeat;  background-position: 0% bottom; background-size: 100%; padding: 0 1vw">мой уголок</a>
         </div>
         <button>сделать вброс</button>
     </header>
@@ -26,24 +57,24 @@
                 <div class="profile_info">
                     <img class="profile_ava" src="../assets/img/ava.jpg">
                     <div class="profile_log_descr">
-                        <p class="profile_login">login</p>
-                        <p class="profile_descr">Lorem ipsum dolor sit amet consectetur. Risus felis luctus amet lectus mattis sem in. Id nibh neque vulputate vel tristique interdum volutpat.</p>
+                        <p class="profile_login"><?=$username?></p>
+                        <p class="profile_descr"><?=$status?></p>
                     </div>
                     <div class="profile_stat">
                         <div class="stat_block">
-                            <p class="stat_count">4</p>
+                            <p class="stat_count"><?=$posts?></p>
                             <p class="stat_descr">опубликованных пикч</p>
                         </div>
                         <div class="stat_block">
-                            <p class="stat_count">42</p>
+                            <p class="stat_count"><?=$liked?></p>
                             <p class="stat_descr">найденных пикч</p>
                         </div>
                         <div class="stat_block">
-                            <p class="stat_count">2</p>
+                            <p class="stat_count"><?=$subscribers?></p>
                             <p class="stat_descr">подписчиков</p>
                         </div>
                         <div class="stat_block">
-                            <p class="stat_count">10</p>
+                            <p class="stat_count"><?=$subscribes?></p>
                             <p class="stat_descr">подписок</p>
                         </div>
                     </div>
