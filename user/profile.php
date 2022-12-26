@@ -7,9 +7,10 @@
     <title>MEMETOREST</title>
     <link rel="icon" type="image/x-icon" href="../assets/fav.jpg">
     <link rel="stylesheet" href="../assets/styles/main.css">
+    <script src="../assets/scripts/modal_win.js"></script>
 </head>
 <body>
-    <header>
+    <header id="header">
         <img class="logo" src="../assets/logo.svg"></img>
         <div class="menu">
             <a class="menu_link" href="../index.php" style="padding: 0 1.4vw">пикчи</a>
@@ -21,11 +22,32 @@
 
     <div class="content">
         <div class="content_container" style="min-height: 82vh; display: block;">
+            <div id="modal_mem">
+                <div class="mem_block">
+                    <div class="mem_info">
+                        <div class="mem_info_ava">
+                            <img src="../assets/img/скала.jpg" style="border-radius: 3px;" width="100%" height="100%"> <!-- тут ава -->
+                        </div>
+                        <div class="nick_descr">
+                            <p class="nick" style="color: #fff;">login</p> <!-- тут имя пользователя -->
+                            <p class="descr" style="color: #fff;">когда позвал старшего брата на стрелу</p> <!-- тут подпись мема -->
+                        </div>
+                    </div>
+
+                    <div class="mem_carousel">
+                        <div class="mem_img" style="align-items: center;">
+                            <img src="../assets/img/трах.jpg" style="border: 2px solid #1F3FEF; border-radius: 3px; width:20vw;"> <!-- тут мем -->
+                        </div>
+                    </div>
+
+                    <div class="profile_buttons">
+                        <button id="like_btn"">годно</button>
+                        <button id="close_btn" onclick="mem_window();"">закрыть</button>
+                    </div>
+                </div>
+            </div>
             <div class="profile_cover"></div>
             <div class="profile_content">
-                <div class="modal_mem">
-
-                </div>
                 <div class="profile_info">
                     <img class="profile_ava" src="../assets/img/ava.jpg">
                     <div class="profile_log_descr">
@@ -59,21 +81,11 @@
                 <div class="posts_content">
                     <p class="block_name">опубликованные пикчи</p>
                     <div class="posts">
-                        <!-- <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
-                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
-                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
-                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
-                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
-                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div> -->
+                        <div class="post_click" onclick="mem_window();"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
                     </div>
                     <p class="block_name">понравившиеся пикчи</p>
                     <div class="posts">
-                        <!-- <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
-                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
-                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
-                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
-                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
-                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div> -->
+                        <div class="post_click" onclick="mem_window();"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
                     </div>
                 </div>
             </div>
