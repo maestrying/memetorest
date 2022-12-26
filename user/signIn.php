@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEMETOREST</title>
-    <link rel="icon" type="image/x-icon" href="assets/fav.jpg">
+    <link rel="icon" type="image/x-icon" href="../assets/fav.jpg">
     <link rel="stylesheet" href="../assets/styles/main.css">
 </head>
 <body>
@@ -29,8 +29,8 @@
                     <input type="text">
                     <label>тут пароль</label>
                     <input type="password">
+                    <button>вернуться домой</button>
                 </form>
-                <button>вернуться домой</button>
                 <p class="form_link">ты еще не с нами? - <a href="signUp.php">регайся</a></p>
             </div>
 
@@ -56,7 +56,6 @@
             <a href="https://github.com/lonelywh1te" class="git_link" target="_blank">lonelywh1te</a>
         </div>
     </footer>
-</style>
 </body>
 <script> </script>
 </html>

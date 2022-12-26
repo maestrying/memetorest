@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEMETOREST</title>
-    <link rel="icon" type="image/x-icon" href="assets/fav.jpg">
+    <link rel="icon" type="image/x-icon" href="../assets/fav.jpg">
     <link rel="stylesheet" href="../assets/styles/main.css">
 </head>
 <body>
     <header>
-        <img class="logo" src="/assets/logo.svg"></img>
+        <img class="logo" src="../assets/logo.svg"></img>
         <div class="menu">
             <a class="menu_link" href="../index.php" style="padding: 0 1.4vw">пикчи</a>
             <a class="menu_link" href="../about_us.php" style="padding: 0 0.8vw">что это такое?</a>
@@ -41,7 +41,6 @@
             <a href="https://github.com/lonelywh1te" class="git_link" target="_blank">lonelywh1te</a>
         </div>
     </footer>
-</style>
 </body>
 <script> </script>
 </html>
