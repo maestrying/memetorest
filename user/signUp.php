@@ -28,7 +28,7 @@
                     <label>тут логин</label>
                     <input type="text">
                     <label>тут почта</label>
-                    <input type="mail">
+                    <input type="email">
                     <label>тут пароль</label>
                     <input type="password">
                     <label>тут еще раз пароль</label>

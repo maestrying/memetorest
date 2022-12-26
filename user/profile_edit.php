@@ -10,7 +10,7 @@
     <script src="../assets/scripts/modal_win.js"></script>
 </head>
 <body>
-    <header id="header">
+    <header>
         <img class="logo" src="../assets/logo.svg"></img>
         <div class="menu">
             <a class="menu_link" href="../index.php" style="padding: 0 1.4vw">пикчи</a>
@@ -19,33 +19,8 @@
         </div>
         <button>сделать вброс</button>
     </header>
-
     <div class="content">
         <div class="content_container" style="min-height: 82vh; display: block;">
-            <div id="modal_mem">
-                <div class="mem_block">
-                    <div class="mem_info">
-                        <div class="mem_info_ava">
-                            <img src="../assets/img/скала.jpg" style="border-radius: 3px;" width="100%" height="100%"> <!-- тут ава -->
-                        </div>
-                        <div class="nick_descr">
-                            <p class="nick" style="color: #fff;">login</p> <!-- тут имя пользователя -->
-                            <p class="descr" style="color: #fff;">когда позвал старшего брата на стрелу</p> <!-- тут подпись мема -->
-                        </div>
-                    </div>
-
-                    <div class="mem_carousel">
-                        <div class="mem_img" style="align-items: center;">
-                            <img src="../assets/img/байден.jpg" style="border: 2px solid #1F3FEF; border-radius: 3px; width:20vw;"> <!-- тут мем -->
-                        </div>
-                    </div>
-
-                    <div class="profile_buttons">
-                        <button id="like_btn"">годно</button>
-                        <button id="close_btn" onclick="mem_window();"">закрыть</button>
-                    </div>
-                </div>
-            </div>
             <div class="profile_cover"></div>
             <div class="profile_content">
                 <div class="profile_info">
@@ -53,11 +28,6 @@
                     <div class="profile_log_descr">
                         <p class="profile_login">login</p>
                         <p class="profile_descr">Lorem ipsum dolor sit amet consectetur. Risus felis luctus amet lectus mattis sem in. Id nibh neque vulputate vel tristique interdum volutpat.</p>
-                    </div>
-                    <div class="profile_buttons">
-                        <button>редактировать</button>
-                        <button>встать и выйти</button>
-                        <!-- <button>следить</button> -->
                     </div>
                     <div class="profile_stat">
                         <div class="stat_block">
@@ -78,15 +48,35 @@
                         </div>
                     </div>
                 </div>
-                <div class="posts_content">
-                    <p class="block_name">опубликованные пикчи</p>
-                    <div class="posts">
-                        <div class="post_click" onclick="mem_window();"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
-                    </div>
-                    <p class="block_name">понравившиеся пикчи</p>
-                    <div class="posts">
-                        <div class="post_click" onclick="mem_window();"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
-                    </div>
+                <div class="edit_content">
+                    <p class="edit_header">редачить профиль</p>
+                    <form action="">
+                        <div class="inp">
+                            <label>логин</label>
+                            <input type="text">
+                        </div>
+                        <div class="inp">
+                            <label>почта</label>
+                            <input type="email">
+                        </div>
+                        <div class="inp">
+                            <label>тут старый пароль</label>
+                            <input type="password">
+                        </div>
+                        <div class="inp">
+                            <label>тут новый пароль</label>
+                            <input type="password">
+                        </div>
+                        <div class="inp">
+                            <label>статус</label>
+                            <input type="text">
+                        </div>
+                        <div class="radio_btns">
+                            <input type="checkbox">
+                            <p>удалиться</p>
+                        </div>
+                        <button style="width: 200px; margin-top: 4vh;">сохранить</button>
+                    </form>
                 </div>
             </div>
         </div>

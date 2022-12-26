@@ -469,6 +469,7 @@ input {
     font-family: 'CASaygon-Light.ttf';
     padding: 1.6vh 0;
     padding-left: 1vw;
+    padding-right: 1vw;
     font-size: 16px;
     width: 20vw;
     margin-top: 1vh;
@@ -729,3 +730,51 @@ input {
     background-color: #fff;
     color: #0A1B79;
 }
+
+
+
+            /* P R O F I L E   E D I T */
+.edit_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30vh 0px 10vh 0;
+    width: 80%;
+    height: 100%;
+}
+
+.edit_header {
+    font-size: 20px;
+}
+
+.edit_content form {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    align-items: center;
+}
+
+.inp {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio_btns {
+    display: flex;
+    align-items: flex-end;
+    padding: 1.6vh 0;
+    width: 8vw;
+    height: 4vh;
+}
+
+.radio_btns input {
+    margin-right: 1vw;
+    width: 13px;
+    height: 15px;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+}
+
+
+
