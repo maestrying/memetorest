@@ -20,8 +20,63 @@
     </header>
 
     <div class="content">
-        <div class="content_container" style="height: 82vh;">
-            
+        <div class="content_container" style="min-height: 82vh; display: block;">
+            <div class="profile_cover"></div>
+            <div class="profile_content">
+                <div class="modal_mem">
+
+                </div>
+                <div class="profile_info">
+                    <img class="profile_ava" src="../assets/img/ava.jpg">
+                    <div class="profile_log_descr">
+                        <p class="profile_login">login</p>
+                        <p class="profile_descr">Lorem ipsum dolor sit amet consectetur. Risus felis luctus amet lectus mattis sem in. Id nibh neque vulputate vel tristique interdum volutpat.</p>
+                    </div>
+                    <div class="profile_buttons">
+                        <button>редактировать</button>
+                        <button>встать и выйти</button>
+                        <!-- <button>следить</button> -->
+                    </div>
+                    <div class="profile_stat">
+                        <div class="stat_block">
+                            <p class="stat_count">4</p>
+                            <p class="stat_descr">опубликованных пикч</p>
+                        </div>
+                        <div class="stat_block">
+                            <p class="stat_count">42</p>
+                            <p class="stat_descr">найденных пикч</p>
+                        </div>
+                        <div class="stat_block">
+                            <p class="stat_count">2</p>
+                            <p class="stat_descr">подписчиков</p>
+                        </div>
+                        <div class="stat_block">
+                            <p class="stat_count">10</p>
+                            <p class="stat_descr">подписок</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="posts_content">
+                    <p class="block_name">опубликованные пикчи</p>
+                    <div class="posts">
+                        <!-- <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
+                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
+                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
+                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
+                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
+                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div> -->
+                    </div>
+                    <p class="block_name">понравившиеся пикчи</p>
+                    <div class="posts">
+                        <!-- <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
+                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
+                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
+                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
+                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
+                        <div class="post_click"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div> -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

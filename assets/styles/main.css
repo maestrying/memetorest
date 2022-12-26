@@ -588,3 +588,121 @@ input {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+
+
+            /* P R O F I L E   P A G E */
+.profile_cover {
+    position: absolute;
+    top: 8vh;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../img/default.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.profile_content {
+    display: flex;
+}
+
+.profile_info {
+    position: relative;
+    z-index: 1;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin: 10vh 100px;
+}
+
+.profile_ava {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #1F3FEF;
+    border-radius: 3px;
+}
+
+.profile_log_descr {
+    margin-top: 1.4vh;
+}
+
+.profile_login { 
+    font-size: 25px;
+}
+
+.profile_descr {
+    font-family: 'CASaygon-Light.ttf';
+    font-size: 11px;
+}
+
+.profile_buttons {
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.profile_buttons button {
+    margin-top: 1vh;
+    font-size: 16px;
+    padding: 0 1vw;
+}
+
+.profile_stat {
+    padding: 3vh 0;
+    margin-top: 6vh;
+    height: 26vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 2px solid rgba(10, 27, 121, 0.3);
+    border-bottom: 2px solid rgba(10, 27, 121, 0.3);
+}
+
+.stat_block {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat_count {
+    font-size: 20px;
+    color: #0A1B79;
+}
+
+.stat_descr {
+    font-size: 11px;
+    color: rgba(10, 27, 121, 0.3);
+}
+
+.posts_content {
+    display: flex;
+    flex-direction: column;
+    margin: 30vh 0px 10vh 0;
+    width: 100%;
+}
+
+.block_name {
+    font-size: 20px;
+    margin-bottom: 3vh;
+}
+
+.posts {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.post {
+    filter: drop-shadow(-14px 14px 0px #1F3FEF);
+    border-radius: 3px;
+    width: 13vw;
+    height: 24vh;
+    margin-bottom: 6vh;
+    margin-right: 4.4vw;
+    cursor: pointer;
+}
