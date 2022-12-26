@@ -71,6 +71,14 @@
                             <label>статус</label>
                             <input type="text">
                         </div>
+                        <div class="inp">
+                            <label>тут аву можно поменять</label>
+                            <input type="file" style="font-size: 11px;">
+                        </div>
+                        <div class="inp">
+                            <label>тут обложку можно поменять</label>
+                            <input type="file" style="font-size: 11px;">
+                        </div>
                         <div class="radio_btns">
                             <input type="checkbox">
                             <p>удалиться</p>
