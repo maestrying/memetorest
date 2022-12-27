@@ -23,7 +23,7 @@
     </header>
 
     <div class="content">
-        <div class="content_container" style="height: 82vh; flex-direction: raw; justify-content:space-between;">
+        <div class="content_container" style="height: 82vh; flex-direction: row; justify-content:space-between;">
             <div class="publish_left_block">
                 <form action="" style="align-items: center;">
                     <div class="drag_file_header">

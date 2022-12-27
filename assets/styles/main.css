@@ -787,10 +787,10 @@ input {
 }
 
 .publish_right_block {
-    margin: 8vh 10vw 0 0;
+    margin: 0vh 10vw 0 0;
     width: 40vw;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     border-left: 2px solid rgba(10, 27, 121, 0.3);
 }
 
