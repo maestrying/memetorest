@@ -51,11 +51,6 @@
                             <img src="assets/img/байден.jpg" style="border: 2px solid #1F3FEF; border-radius: 3px; width:20vw;"> <!-- тут мем -->
                         </div>
                     </div>
-
-                    <div class="profile_buttons">
-                        <button id="like_btn"">годно</button>
-                        <button id="close_btn" onclick="mem_window();"">закрыть</button>
-                    </div>
                 </div>
             </div>
         </div>
