@@ -114,6 +114,10 @@
                             <input type="checkbox">
                             <p>удалиться</p>
                         </div>
+                        <div class="radio_btns" style="padding-top: 0;">
+                            <input type="checkbox">
+                            <p>удалить аву</p>
+                        </div>
                         <button style="width: 200px; margin-top: 4vh;">сохранить</button>
                     </form>
                 </div>

@@ -81,7 +81,7 @@
             <div class="profile_cover"></div>
             <div class="profile_content">
                 <div class="profile_info">
-                    <img class="profile_ava" src="../assets/img/ava.jpg">
+                    <img class="profile_ava" src="../assets/img/скала.jpg">
                     <div class="profile_log_descr">
                         <p class="profile_login"><?=$username?></p>
                         <p class="profile_descr"><?=$status?></p>
