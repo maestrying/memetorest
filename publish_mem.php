@@ -46,7 +46,6 @@
     <header>
         <img class="logo" src="assets/logo.svg"></img>
         <div class="menu">
-            <a class="menu_link" href="#" style="background-image: url('assets/svg/3.svg'); background-repeat: no-repeat;  background-position: 0% bottom; background-size: 100%; padding: 0 1.4vw">пикчи</a>
             <a class="menu_link" href="index.php" style="padding: 0 1.4vw">пикчи</a>
             <a class="menu_link" href="about_us.php" style="padding: 0 0.8vw">что это такое?</a>
             <a class="menu_link" href="user/profile.php<?php if (isset($_SESSION['id'])) echo ("?id=".$_SESSION['id']); ?>" style="padding: 0 1vw">мой уголок</a>
@@ -74,13 +73,13 @@
                         </div>
                         <div class="nick_descr">
                             <p class="nick">login</p> <!-- тут имя пользователя -->
-                            <p class="descr">// тут твоя подпись к мемесу</p> <!-- тут подпись мема -->
+                            <p class="descr" id="text">// тут твоя подпись к мемесу</p> <!-- тут подпись мема -->
                         </div>
                     </div>
 
                     <div class="mem_carousel">
                         <div class="mem_img" style="align-items: center;">
-                            <img id='preview' src="assets/img/байден.jpg" style="border: 2px solid #1F3FEF; border-radius: 3px; width:20vw;"> <!-- тут мем -->
+                            <img id='preview' src="assets/img/preview.png" style="border: 2px solid #1F3FEF; border-radius: 3px; width:20vw;"> <!-- тут мем -->
                         </div>
                     </div>
                 </div>
