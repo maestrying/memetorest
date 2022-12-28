@@ -16,9 +16,9 @@
     <header>
         <img class="logo" src="assets/logo.svg"></img>
         <div class="menu">
-            <a class="menu_link" href="index.php" style="padding: 0 1.4vw">пикчи</a>
-            <a class="menu_link" href="#" style="background-image: url('assets/svg/1.svg'); background-repeat: no-repeat; background-position: 0% bottom; background-size: 95%; padding: 0 0.8vw"><p>что это такое?</p></a>
-            <a class="menu_link" href="user/profile.php<?php if (isset($_SESSION['id'])) echo ("?id=".$_SESSION['id']); ?>" style="padding: 0 1vw">мой уголок</a>
+            <a class="menu_link" href="index.php" style="padding: 0 1.4vw;">пикчи</a>
+            <a class="menu_link" href="#" style="background-image: url('assets/svg/1.svg'); background-repeat: no-repeat; background-position: 0% bottom; background-size: 95%; padding: 0 0.8vw;"><p>что это такое?</p></a>
+            <a class="menu_link" href="user/profile.php<?php if (isset($_SESSION['id'])) echo ("?id=".$_SESSION['id']); ?>" style="padding: 0 1vw;">мой уголок</a>
         </div>
         <button>сделать вброс</button>
     </header>
