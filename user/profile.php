@@ -173,7 +173,6 @@
             <a href="https://github.com/lonelywh1te" class="git_link" target="_blank">lonelywh1te</a>
         </div>
     </footer>
-</style>
 </body>
 <script src="../assets/scripts/jquery-3.6.3.min.js"></script>
 <script>

@@ -138,7 +138,7 @@ footer .git_block p {
     display: flex;
     justify-content: space-between;
     align-self: center;
-    width: 32vw;
+    width: 34vw;
 }
 
 .menu_link a {
@@ -883,4 +883,45 @@ input {
 
 .block_l {
     padding-left: 2vw;
+}
+
+
+
+            /* E R R O R S */
+.err_block {
+    height: 54vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.err_title {
+    width: 42vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.line {
+    width: 10vw;
+    height: 2vh;
+    border-bottom: 2px solid #000;
+}
+
+.err_p {
+    font-size: 3vw;
+}
+
+.err_descr {
+    text-align: center;
+    font-size: 2vw;
+}
+
+.err_number {
+    z-index: -1;
+    position: absolute;
+    top: 6vh;
+    font-size: 406px;
+    color: rgba(0, 0, 0, 0.07);
 }
