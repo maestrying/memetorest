@@ -190,10 +190,6 @@ footer .git_block p {
     font-family: 'CASaygon-Regular.ttf';
 }
 
-.like_btn {
-    width: 140px;
-}
-
 .img-bg1 {
     width: 176px;
     height: 185px;
@@ -304,6 +300,7 @@ footer .git_block p {
     position: absolute;
 
     color: #0A1B79;
+    z-index: -1;
 }
 
 .p-bg-1 {
@@ -398,6 +395,101 @@ footer .git_block p {
 }
 
             /* M A I N   P A G E */
+.post_mem_block {
+    width: 60vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3vh 0;
+    background-color: #ffffff;
+    padding: 8vh 0;
+    border-radius: 5px;
+}
+
+.post_mem_info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post_main_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post_date {
+    opacity: 0.2;
+}
+
+.post_user_info {
+    display: flex;
+}
+
+.post_mem_info_ava {
+    position: absolute;
+    left: -80px;
+    margin-right: 1vw;
+    width: 70px;
+    height: 70px;
+    display: flex;
+}
+
+.post_nick { 
+    margin-bottom: 1vh; 
+    font-size: 1.4vw;
+}
+
+.post_nick_descr {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.post_descr {
+    font-family: 'CASaygon-Light.ttf';
+    width: 40vw;
+    padding-bottom: 3vh;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+    font-size: 12px;
+}
+
+.descr {
+    font-family: 'CASaygon-Light.ttf';
+}
+
+.post_img {
+    border-radius: 3px; 
+    margin-top: 3vh;
+    max-width: 30vw;
+    align-self: center;
+}
+
+.mem_img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 24vw;
+    height: auto;
+    margin: 2vh 2vw;
+}
+
+.post_like_btn {
+    width: 100%;
+    margin-top: 3vh;
+    align-self: center;
+}
+
+.like_btn {
+    width: 140px;
+}
+
 .mem_block {
     width: 39vw;
     height: auto;
@@ -463,6 +555,8 @@ footer .git_block p {
     height: auto;
     margin: 2vh 2vw;
 }
+
+
 
             /* P R O F I L E */
 form {
