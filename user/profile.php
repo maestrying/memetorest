@@ -2,6 +2,12 @@
     session_start();
     include_once ('../php/connect.php');
 
+    if (isset($_SESSION['meme'])){
+        mysqli_query($conn, "delete from posts where share='0'");
+        unlink('../posts/'.$_SESSION['meme'].'.jpg');
+        unset($_SESSION['meme']);
+    }
+
     if (!isset($_SESSION['id'])){
         header("Location: signIn.php");
     }
@@ -16,6 +22,8 @@
         else {
             // получаем имя и статус пользователя
             $username = $user['login'];
+            $avatar = $user['avatar'];
+            $cover = $user['cover'];
             $status = $user['status'];
             $posts = $user['published'];
             $liked = $user['finded'];
@@ -49,7 +57,7 @@
                 }
             ?>" style="background-image: url('../assets/svg/2.svg'); background-repeat: no-repeat;  background-position: 0% bottom; background-size: 100%; padding: 0 1vw">мой уголок</a>
         </div>
-        <button>сделать вброс</button>
+        <button onclick="location.href='../publish_mem.php'">сделать вброс</button>
     </header>
 
     <div class="content">
@@ -58,17 +66,17 @@
                 <div class="mem_block">
                     <div class="mem_info">
                         <div class="mem_info_ava">
-                            <img src="../assets/img/скала.jpg" style="border-radius: 3px;" width="100%" height="100%"> <!-- тут ава -->
+                            <img src="../avatars/<?=$avatar?>" style="border-radius: 3px;" width="100%" height="100%"> <!-- тут ава -->
                         </div>
                         <div class="nick_descr">
-                            <p class="nick" style="color: #fff;">login</p> <!-- тут имя пользователя -->
+                            <p class="nick" style="color: #fff;"><?= $username ?></p> <!-- тут имя пользователя -->
                             <p class="descr" style="color: #fff;">когда позвал старшего брата на стрелу</p> <!-- тут подпись мема -->
                         </div>
                     </div>
 
                     <div class="mem_carousel">
                         <div class="mem_img" style="align-items: center;">
-                            <img src="../assets/img/байден.jpg" style="border: 2px solid #1F3FEF; border-radius: 3px; width:20vw;"> <!-- тут мем -->
+                            <img src="../assets/img/даун.jpg" style="border: 2px solid #1F3FEF; border-radius: 3px; width:20vw;"> <!-- тут мем -->
                         </div>
                     </div>
 
@@ -78,22 +86,42 @@
                     </div>
                 </div>
             </div>
-            <div class="profile_cover"></div>
+            <?php
+                $query = mysqli_query($conn, "select * from users where id='$user_id'");
+                $result = $query->fetch_assoc();
+                if ($result['cover'] != 'default.jpg'){
+                    echo '<div class="profile_cover" id="cover" style="background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../covers/'.$result['cover'].'); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>';
+                }
+                else {
+                    echo '<div class="profile_cover" id="cover"></div>';
+                }
+            ?>
             <div class="profile_content">
                 <div class="profile_info">
-                    <img class="profile_ava" src="../assets/img/скала.jpg">
+                    <img class="profile_ava" src="../avatars/<?=$avatar?>">
                     <div class="profile_log_descr">
                         <p class="profile_login"><?=$username?></p>
                         <p class="profile_descr"><?=$status?></p>
                     </div>
                     <div class="profile_buttons">
                         <?php
+
                             if ($_SESSION['id'] == $user_id){
                                 echo '<button onclick="edit()">редактировать</button>';
                                 echo '<button onclick="logout()">встать и выйти</button>';
                             }
                             else {
-                                echo '<button>следить</button>';
+                                $user = $_SESSION['id'];
+                                $subscribe_id = $user_id;
+
+                                $query = mysqli_query($conn, "select * from subscribes where user_id='$user' and subscribes_to='$subscribe_id'");
+                                $result = $query->fetch_assoc();
+                                if (empty($result)) {
+                                    echo '<button id="subscribe" onclick="subscribe('.$_GET['id'].')">следить</button>';
+                                }
+                                else {
+                                    echo '<button id="subscribe" onclick="subscribe('.$_GET['id'].')">подписан</button>';
+                                }
                             }
                         ?>
                     </div>
@@ -119,7 +147,6 @@
                 <div class="posts_content">
                     <p class="block_name">опубликованные пикчи</p>
                     <div class="posts">
-                        <div class="post_click" onclick="mem_window();"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
                     </div>
                     <p class="block_name">понравившиеся пикчи</p>
                     <div class="posts">
@@ -148,6 +175,7 @@
     </footer>
 </style>
 </body>
+<script src="../assets/scripts/jquery-3.6.3.min.js"></script>
 <script>
     function logout(){
         location.href = '../php/logout.php';
@@ -155,5 +183,22 @@
     function edit(){
         location.href = 'profile_edit.php';
     }
+    function subscribe(id){
+        $.ajax({
+            url: '../php/subscribe.php',
+            method: 'post',
+            dataType: 'html',
+            data: {id: id},
+            success: function(result){
+                if (result === 'subscribed'){
+                    document.getElementById('subscribe').innerText = 'подписан';
+                }
+                else {
+                    document.getElementById('subscribe').innerText = 'cледить';
+                }
+            }
+        });
+    }
+
 </script>
 </html>

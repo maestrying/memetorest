@@ -1,5 +1,11 @@
 <?php
     session_start();
+    include_once ('php/connect.php');
+    if(isset($_SESSION['meme'])){
+        mysqli_query($conn, "delete from posts where share='0'");
+        unlink('../posts/'.$_SESSION['meme'].'.jpg');
+        unset($_SESSION['meme']);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +26,7 @@
             <a class="menu_link" href="#" style="background-image: url('assets/svg/1.svg'); background-repeat: no-repeat; background-position: 0% bottom; background-size: 95%; padding: 0 0.8vw"><p>что это такое?</p></a>
             <a class="menu_link" href="user/profile.php<?php if (isset($_SESSION['id'])) echo ("?id=".$_SESSION['id']); ?>" style="padding: 0 1vw">мой уголок</a>
         </div>
-        <button>сделать вброс</button>
+        <button onclick="location.href='publish_mem.php'">сделать вброс</button>
     </header>
 
     <div class="marquee">
