@@ -48,35 +48,35 @@
             </div>
             <div id="panel_block1">
                 <div class="block_l">
-                    <form action="">
+                    <form action="php/block_user.php" method="post">
                         <label>заблочить чела</label>
-                        <input type="text" placeholder="id чела">
-                        <input type="text" placeholder="причина">
-                        <button style="margin-top: 2vh; width: 12vw">блокнуть</button>
+                        <input name="id" onkeyup="find(value, 1)" type="text" placeholder="id чела">
+                        <input name="reason" type="text" placeholder="причина">
+                        <button type="submit" style="margin-top: 2vh; width: 12vw">блокнуть</button>
                     </form>
                 </div>
                 <div class="block_r">
                     <div class="profile_info" style="margin-top: 5vh;">
-                        <img class="profile_ava" src="assets/img/скала.jpg" style="width: 150px; height: 150px;">
+                        <img class="profile_ava"  id='avatar1' src="avatars/default.jpg" style="width: 150px; height: 150px;">
                         <div class="profile_log_descr">
-                            <p class="profile_login"><?=$username?></p>
-                            <p class="profile_descr"><?=$status?></p>
+                            <p class="profile_login" id="login1"></p>
+                            <p class="profile_descr" id="status1"></p>
                         </div>
                         <div class="profile_stat">
                             <div class="stat_block">
-                                <p class="stat_count"><?=$posts?></p>
+                                <p class="stat_count" id="published1"></p>
                                 <p class="stat_descr">опубликованных пикч</p>
                             </div>
                             <div class="stat_block">
-                                <p class="stat_count"><?=$liked?></p>
+                                <p class="stat_count" id="liked1"></p>
                                 <p class="stat_descr">найденных пикч</p>
                             </div>
                             <div class="stat_block">
-                                <p class="stat_count"><?=$subscribers?></p>
+                                <p class="stat_count" id="subscribers1"></p>
                                 <p class="stat_descr">подписчиков</p>
                             </div>
                             <div class="stat_block">
-                                <p class="stat_count"><?=$subscribes?></p>
+                                <p class="stat_count" id="subsribes1"></p>
                                 <p class="stat_descr">подписок</p>
                             </div>
                         </div>
@@ -85,34 +85,34 @@
             </div>
             <div id="panel_block2">
                 <div class="block_l">
-                    <form action="">
+                    <form action="php/unblock_user.php" method="post">
                         <label>разблочить чела</label>
-                        <input type="text" placeholder="id чела">
-                        <button style="margin-top: 2vh; width: 10vw">разблок</button>
+                        <input name='id' onkeyup="find(value, 2)" type="text" placeholder="id чела">
+                        <button type="submit" style="margin-top: 2vh; width: 10vw">разблок</button>
                     </form>
                 </div>
                 <div class="block_r">
                     <div class="profile_info" style="margin-top: 5vh;">
-                        <img class="profile_ava" src="assets/img/скала.jpg" style="width: 150px; height: 150px;">
+                        <img class="profile_ava"  id='avatar2' src="avatars/default.jpg" style="width: 150px; height: 150px;">
                         <div class="profile_log_descr">
-                            <p class="profile_login"><?=$username?></p>
-                            <p class="profile_descr"><?=$status?></p>
+                            <p class="profile_login" id="login2"></p>
+                            <p class="profile_descr" id="status2"></p>
                         </div>
                         <div class="profile_stat">
                             <div class="stat_block">
-                                <p class="stat_count"><?=$posts?></p>
+                                <p class="stat_count" id="published2"></p>
                                 <p class="stat_descr">опубликованных пикч</p>
                             </div>
                             <div class="stat_block">
-                                <p class="stat_count"><?=$liked?></p>
+                                <p class="stat_count" id="liked2"></p>
                                 <p class="stat_descr">найденных пикч</p>
                             </div>
                             <div class="stat_block">
-                                <p class="stat_count"><?=$subscribers?></p>
+                                <p class="stat_count" id="subscribers2"></p>
                                 <p class="stat_descr">подписчиков</p>
                             </div>
                             <div class="stat_block">
-                                <p class="stat_count"><?=$subscribes?></p>
+                                <p class="stat_count" id="subsribes2"></p>
                                 <p class="stat_descr">подписок</p>
                             </div>
                         </div>
@@ -149,34 +149,34 @@
             </div>
             <div id="panel_block4">
                 <div class="block_l">
-                    <form action="">
+                    <form action="php/add_admin.php" method="post">
                         <label>добавить админа</label>
-                        <input type="text" placeholder="id чела">
-                        <button style="margin-top: 2vh; width: 10vw">добавить</button>
+                        <input name='id' onkeyup="find(value, 3)" type="text" placeholder="id чела">
+                        <button type="submit" style="margin-top: 2vh; width: 10vw">добавить</button>
                     </form>
                 </div>
                 <div class="block_r">
                     <div class="profile_info" style="margin-top: 5vh;">
-                        <img class="profile_ava" src="assets/img/скала.jpg" style="width: 150px; height: 150px;">
+                        <img class="profile_ava"  id='avatar3' src="avatars/default.jpg" style="width: 150px; height: 150px;">
                         <div class="profile_log_descr">
-                            <p class="profile_login"><?=$username?></p>
-                            <p class="profile_descr"><?=$status?></p>
+                            <p class="profile_login" id="login3"></p>
+                            <p class="profile_descr" id="status3"></p>
                         </div>
                         <div class="profile_stat">
                             <div class="stat_block">
-                                <p class="stat_count"><?=$posts?></p>
+                                <p class="stat_count" id="published3"></p>
                                 <p class="stat_descr">опубликованных пикч</p>
                             </div>
                             <div class="stat_block">
-                                <p class="stat_count"><?=$liked?></p>
+                                <p class="stat_count" id="liked3"></p>
                                 <p class="stat_descr">найденных пикч</p>
                             </div>
                             <div class="stat_block">
-                                <p class="stat_count"><?=$subscribers?></p>
+                                <p class="stat_count" id="subscribers3"></p>
                                 <p class="stat_descr">подписчиков</p>
                             </div>
                             <div class="stat_block">
-                                <p class="stat_count"><?=$subscribes?></p>
+                                <p class="stat_count" id="subsribes3"></p>
                                 <p class="stat_descr">подписок</p>
                             </div>
                         </div>
@@ -185,34 +185,34 @@
             </div>
             <div id="panel_block5">
                 <div class="block_l">
-                    <form action="">
-                        <label>разблочить чела</label>
-                        <input type="text" placeholder="id чела">
-                        <button style="margin-top: 2vh; width: 10vw">удалить</button>
+                    <form action="php/del_admin.php" method="post">
+                        <label>удалить админа</label>
+                        <input name='id' onkeyup="find(value, 4)" type="text" placeholder="id чела">
+                        <button type="submit" style="margin-top: 2vh; width: 10vw">удалить</button>
                     </form>
                 </div>
                 <div class="block_r">
                     <div class="profile_info" style="margin-top: 5vh;">
-                        <img class="profile_ava" src="assets/img/скала.jpg" style="width: 150px; height: 150px;">
+                        <img class="profile_ava"  id='avatar4' src="avatars/default.jpg" style="width: 150px; height: 150px;">
                         <div class="profile_log_descr">
-                            <p class="profile_login"><?=$username?></p>
-                            <p class="profile_descr"><?=$status?></p>
+                            <p class="profile_login" id="login4"></p>
+                            <p class="profile_descr" id="status4"></p>
                         </div>
                         <div class="profile_stat">
                             <div class="stat_block">
-                                <p class="stat_count"><?=$posts?></p>
+                                <p class="stat_count" id="published4"></p>
                                 <p class="stat_descr">опубликованных пикч</p>
                             </div>
                             <div class="stat_block">
-                                <p class="stat_count"><?=$liked?></p>
+                                <p class="stat_count" id="liked4"></p>
                                 <p class="stat_descr">найденных пикч</p>
                             </div>
                             <div class="stat_block">
-                                <p class="stat_count"><?=$subscribers?></p>
+                                <p class="stat_count" id="subscribers4"></p>
                                 <p class="stat_descr">подписчиков</p>
                             </div>
                             <div class="stat_block">
-                                <p class="stat_count"><?=$subscribes?></p>
+                                <p class="stat_count" id="subsribes4"></p>
                                 <p class="stat_descr">подписок</p>
                             </div>
                         </div>
@@ -239,7 +239,48 @@
         </div>
     </footer>
 </body>
+<script src="assets/scripts/jquery-3.6.3.min.js"></script>
 <script>
+    function find(id, block_number){
+        $.ajax({
+            url: 'php/find_user.php',
+            method: 'post',
+            data: {id: id},
+            success: function(result){
+                let user = JSON.parse(result);
+                if (!(user === null)) {
+                    document.getElementById('avatar' + block_number).src = 'avatars/' + user['avatar'];
+                    document.getElementById('login' + block_number).innerHTML = user['login'];
+                    if (user['is_blocked'] === '1'){
+                        document.getElementById('status' + block_number).innerHTML = 'пользователь заблокирован';
+                        document.getElementById('status' + block_number).style.color = 'red';
+                    }
+                    else if (user['admin'] === '1'){
+                        document.getElementById('status' + block_number).innerHTML = 'администратор';
+                        document.getElementById('status' + block_number).style.color = '#F69523';
+                    }
+                    else {
+                        document.getElementById('status' + block_number).innerHTML = user['status'];
+                        document.getElementById('status' + block_number).style.color = 'black';
+                    }
+                    document.getElementById('published' + block_number).innerHTML = user['published'];
+                    document.getElementById('liked' + block_number).innerHTML = user['finded'];
+                    document.getElementById('subscribers' + block_number).innerHTML = user['subscribers'];
+                    document.getElementById('subsribes' + block_number).innerHTML = user['subscribes'];
+                }
+                else {
+                    document.getElementById('avatar' + block_number).src = 'avatars/default.jpg';
+                    document.getElementById('login' + block_number).innerHTML = 'пользователь не найден';
+                    document.getElementById('status' + block_number).innerHTML = '';
+                    document.getElementById('published' + block_number).innerHTML = '-';
+                    document.getElementById('liked' + block_number).innerHTML = '-';
+                    document.getElementById('subscribers' + block_number).innerHTML = '-';
+                    document.getElementById('subsribes' + block_number).innerHTML = '-';
+                }
+            }
+        });
+    }
+
     function panel_show(){
         elem = document.getElementById('panel_block' + i);
         for (j = 1; j <= 5; j++) {

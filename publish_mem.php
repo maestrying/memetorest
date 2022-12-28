@@ -74,13 +74,13 @@
                         </div>
                         <div class="nick_descr">
                             <p class="nick">login</p> <!-- тут имя пользователя -->
-                            <p class="descr">// тут твоя подпись к мемесу</p> <!-- тут подпись мема -->
+                            <p class="descr" id="text">// тут твоя подпись к мемесу</p> <!-- тут подпись мема -->
                         </div>
                     </div>
 
                     <div class="mem_carousel">
                         <div class="mem_img" style="align-items: center;">
-                            <img id='preview' src="assets/img/байден.jpg" style="border: 2px solid #1F3FEF; border-radius: 3px; width:20vw;"> <!-- тут мем -->
+                            <img id='preview' src="assets/img/preview.png" style="border: 2px solid #1F3FEF; border-radius: 3px; width:20vw;"> <!-- тут мем -->
                         </div>
                     </div>
                 </div>

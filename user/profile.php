@@ -17,9 +17,17 @@
         $user = $query->fetch_assoc();
 
         if (!isset($user['login'])) {
-            header('Location: ../php/404.php');
+            header('Location: ../err/404.php');
         }
         else {
+            if ($user['is_blocked'] == '1') {
+                if ($user_id == $_SESSION['id']) {
+                    header('Location: ../php/logout.php');
+                }
+                else {
+                    header('Location: ../err/user_blocked.php');
+                }
+            }
             // получаем имя и статус пользователя
             $username = $user['login'];
             $avatar = $user['avatar'];
@@ -29,6 +37,7 @@
             $liked = $user['finded'];
             $subscribers = $user['subscribers'];
             $subscribes = $user['subscribes'];
+            $admin = $user['admin'];
         }
     }
 ?>
@@ -109,7 +118,9 @@
                             if ($_SESSION['id'] == $user_id){
                                 echo '<button onclick="edit()">редактировать</button>';
                                 echo '<button onclick="logout()">встать и выйти</button>';
-                                echo '<button onclick="logout()" class="admin_btn">аДмИнКа</button>';
+                                if ($user['admin'] == '1'){
+                                    echo '<button onclick="admin()" class="admin_btn">админ</button>';
+                                }
                             }
                             else {
                                 $user = $_SESSION['id'];
@@ -181,6 +192,9 @@
     }
     function edit(){
         location.href = 'profile_edit.php';
+    }
+    function admin(){
+        location.href = '../admin_panel.php';
     }
     function subscribe(id){
         $.ajax({

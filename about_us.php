@@ -6,6 +6,10 @@
         unlink('../posts/'.$_SESSION['meme'].'.jpg');
         unset($_SESSION['meme']);
     }
+
+    function find(){
+
+    }
 ?>
 
 <!DOCTYPE html>
