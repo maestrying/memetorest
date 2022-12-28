@@ -69,11 +69,11 @@
                 <div class="mem_block">
                     <div class="mem_info">
                         <div class="mem_info_ava">
-                            <img src="/avatars/<?= $avatar ?>" style="border-radius: 3px;" width="100%" height="100%"> <!-- тут ава -->
+                            <img src="assets/img/скала.jpg" style="border-radius: 3px;" width="100%" height="100%"> <!-- тут ава -->
                         </div>
                         <div class="nick_descr">
-                            <p class="nick"><?= $username ?></p> <!-- тут имя пользователя -->
-                            <p class="descr" id="text">// тут твоя подпись к мемесу</p> <!-- тут подпись мема -->
+                            <p class="nick">login</p> <!-- тут имя пользователя -->
+                            <p class="descr">// тут твоя подпись к мемесу</p> <!-- тут подпись мема -->
                         </div>
                     </div>
 

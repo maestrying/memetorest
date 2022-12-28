@@ -48,14 +48,14 @@
     <header id="header">
         <img class="logo" src="../assets/logo.svg"></img>
         <div class="menu">
-            <a class="menu_link" href="../index.php" style="padding: 0 1.4vw">пикчи</a>
-            <a class="menu_link" href="../about_us.php" style="padding: 0 0.8vw">что это такое?</a>
+            <a class="menu_link" href="../index.php" style="padding: 0 1.4vw;">пикчи</a>
+            <a class="menu_link" href="../about_us.php" style="padding: 0 0.8vw;">что это такое?</a>
             <a class="menu_link" href="
             <?php
                 if ($user_id != $_SESSION['id']){
                     echo ('profile.php?id='.$_SESSION['id']);
                 }
-            ?>" style="background-image: url('../assets/svg/2.svg'); background-repeat: no-repeat;  background-position: 0% bottom; background-size: 100%; padding: 0 1vw">мой уголок</a>
+            ?>" style="background-image: url('../assets/svg/2.svg'); background-repeat: no-repeat;  background-position: 0% bottom; background-size: 100%; padding: 0 1vw;">мой уголок</a>
         </div>
         <button onclick="location.href='../publish_mem.php'">сделать вброс</button>
     </header>
@@ -109,6 +109,7 @@
                             if ($_SESSION['id'] == $user_id){
                                 echo '<button onclick="edit()">редактировать</button>';
                                 echo '<button onclick="logout()">встать и выйти</button>';
+                                echo '<button onclick="logout()" class="admin_btn">аДмИнКа</button>';
                             }
                             else {
                                 $user = $_SESSION['id'];
@@ -150,7 +151,6 @@
                     </div>
                     <p class="block_name">понравившиеся пикчи</p>
                     <div class="posts">
-                        <div class="post_click" onclick="mem_window();"><img class="post" src="../assets/img/байден.jpg" width="20%" height="80%"></img></div>
                     </div>
                 </div>
             </div>
