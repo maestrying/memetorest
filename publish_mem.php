@@ -1,5 +1,36 @@
 <?php
     session_start();
+    include_once ('php/connect.php');
+
+    if(isset($_SESSION['meme'])){
+        mysqli_query($conn, "delete from posts where share='0'");
+        unlink('../posts/'.$_SESSION['meme'].'.jpg');
+        unset($_SESSION['meme']);
+    }
+
+    if (!isset($_SESSION['id'])){
+        header("Location: signIn.php");
+    }
+    else {
+        $user_id = $_SESSION['id'];
+        $query = mysqli_query($conn,"select * from users, stats where id=user_id and id='$user_id'");
+        $user = $query->fetch_assoc();
+
+        if (!isset($user['login'])) {
+            header('Location: ../php/404.php');
+        }
+
+        else {
+            // получаем имя и статус пользователя
+            $username = $user['login'];
+            $avatar = $user['avatar'];
+            $status = $user['status'];
+            $posts = $user['published'];
+            $liked = $user['finded'];
+            $subscribers = $user['subscribers'];
+            $subscribes = $user['subscribes'];
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +46,7 @@
     <header>
         <img class="logo" src="assets/logo.svg"></img>
         <div class="menu">
+            <a class="menu_link" href="#" style="background-image: url('assets/svg/3.svg'); background-repeat: no-repeat;  background-position: 0% bottom; background-size: 100%; padding: 0 1.4vw">пикчи</a>
             <a class="menu_link" href="index.php" style="padding: 0 1.4vw">пикчи</a>
             <a class="menu_link" href="about_us.php" style="padding: 0 0.8vw">что это такое?</a>
             <a class="menu_link" href="user/profile.php<?php if (isset($_SESSION['id'])) echo ("?id=".$_SESSION['id']); ?>" style="padding: 0 1vw">мой уголок</a>
@@ -25,13 +57,13 @@
     <div class="content">
         <div class="content_container" style="height: 82vh; flex-direction: row; justify-content:space-between;">
             <div class="publish_left_block">
-                <form action="" style="align-items: center;">
+                <form action="php/share_meme.php" method="post" style="align-items: center;">
                     <div class="drag_file_header">
                         залей <br> сюда <br> свой <br> мем
-                        <input class="drag_input" type="file">
+                        <input class="drag_input" type="file" accept='.image/jpeg' name='meme' id='meme' onchange="create_meme()">
                     </div>
-                    <input type="text" placeholder="// тут твоя подпись к мемесу" style="font-size: 11px; margin-top: 4vh;">
-                    <button style="margin-top: 4vh; width: 16vw;">показать миру</button>
+                    <input type="text" name= 'text' placeholder="// тут твоя подпись к мемесу"  onkeyup="update_text()" id='input' maxlength="30" style="font-size: 11px; margin-top: 4vh;">
+                    <button style="margin-top: 4vh; width: 16vw;" type="submit">показать миру</button>
                 </form>
             </div>
             <div class="publish_right_block">
@@ -48,7 +80,7 @@
 
                     <div class="mem_carousel">
                         <div class="mem_img" style="align-items: center;">
-                            <img src="" style="border: 2px solid #1F3FEF; border-radius: 3px; width:20vw; min-height: 20vh;"> <!-- тут мем -->
+                            <img id='preview' src="assets/img/байден.jpg" style="border: 2px solid #1F3FEF; border-radius: 3px; width:20vw;"> <!-- тут мем -->
                         </div>
                     </div>
                 </div>
@@ -73,5 +105,31 @@
         </div>
     </footer>
 </body>
-<script> </script>
+<script src="assets/scripts/jquery-3.6.3.min.js"></script>
+<script>
+    let input = document.querySelector('input');
+    function update_text(){
+        document.getElementById('text').innerText = document.getElementById('input').value;
+    }
+
+    function create_meme(){
+        let $input = $("#meme");
+        let formData = new FormData;
+        formData.append('img', $input.prop('files')[0]);
+
+        $.ajax({
+            url: "/php/create_meme.php",
+            type: "post",
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: formData,
+            success: function (data){
+                document.getElementById('preview').src = data;
+            }
+
+        })
+    }
+
+</script>
 </html>

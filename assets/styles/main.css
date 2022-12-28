@@ -611,7 +611,7 @@ input {
     justify-content: flex-start;
     width: 100%;
     height: 200px;
-    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../img/default.jpg);
+    background: linear-gradient(0deg, rgba(31, 63, 239, 0.3), rgba(31, 63, 239, 0.3)), url(../../covers/default.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
