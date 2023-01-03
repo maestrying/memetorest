@@ -6,5 +6,6 @@
     $text = $_POST['text'];
     if ($text == "") $text = "< без комментариев >";
     mysqli_query($conn, "update posts set share='1', text='$text' where id='$meme_id'");
+    mysqli_query($conn, "update stats set published=`published`+1 where user_id='$user_id'");
     unset($_SESSION['meme']);
     header("Location: ../user/profile.php?id=$user_id");

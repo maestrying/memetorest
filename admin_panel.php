@@ -50,7 +50,7 @@
                 <div class="block_l">
                     <form action="php/block_user.php" method="post">
                         <label>заблочить чела</label>
-                        <input name="id" onkeyup="find(value, 1)" type="text" placeholder="id чела">
+                        <input name="id" onkeyup="find_user(value, 1)" type="text" placeholder="id чела">
                         <input name="reason" type="text" placeholder="причина">
                         <button type="submit" style="margin-top: 2vh; width: 12vw">блокнуть</button>
                     </form>
@@ -87,7 +87,7 @@
                 <div class="block_l">
                     <form action="php/unblock_user.php" method="post">
                         <label>разблочить чела</label>
-                        <input name='id' onkeyup="find(value, 2)" type="text" placeholder="id чела">
+                        <input name='id' onkeyup="find_user(value, 2)" type="text" placeholder="id чела">
                         <button type="submit" style="margin-top: 2vh; width: 10vw">разблок</button>
                     </form>
                 </div>
@@ -121,27 +121,27 @@
             </div>
             <div id="panel_block3">
                 <div class="block_l">
-                    <form action="">
+                    <form action="php/delete_post.php" method="post">
                         <label>удалить запись</label>
-                        <input type="text" placeholder="id записи">
-                        <button style="margin-top: 2vh; width: 10vw">удалить</button>
+                        <input onkeyup="find_post(value)" name='id' type="text" placeholder="id записи">
+                        <button type="submit" style="margin-top: 2vh; width: 10vw">удалить</button>
                     </form>
                 </div>
                 <div class="block_r">
                     <div class="mem_block" style="margin-top: 4vh;">
                         <div class="mem_info">
                             <div class="mem_info_ava">
-                                <img src="assets/img/скала.jpg" style="border-radius: 3px;" width="100%" height="100%"> <!-- тут ава -->
+                                <img id='avatar5'src="avatars/default.jpg" style="border-radius: 3px;" width="100%" height="100%"> <!-- тут ава -->
                             </div>
                             <div class="nick_descr">
-                                <p class="nick">login</p> <!-- тут имя пользователя -->
-                                <p class="descr">когда позвал старшего брата на стрелу</p> <!-- тут подпись мема -->
+                                <p id='username' class="nick">запись не найдена</p> <!-- тут имя пользователя -->
+                                <p id='text'class="descr">введите id записи</p> <!-- тут подпись мема -->
                             </div>
                         </div>
 
                         <div class="mem_carousel">
                             <div class="mem_img">
-                                <img src="assets/img/пес.jpg" style="border-radius: 3px;"> <!-- тут мем -->
+                                <img id='meme'src="assets/img/preview.png" style="border-radius: 3px;"> <!-- тут мем -->
                             </div>
                         </div>
                     </div>
@@ -151,7 +151,7 @@
                 <div class="block_l">
                     <form action="php/add_admin.php" method="post">
                         <label>добавить админа</label>
-                        <input name='id' onkeyup="find(value, 3)" type="text" placeholder="id чела">
+                        <input name='id' onkeyup="find_user(value, 3)" type="text" placeholder="id чела">
                         <button type="submit" style="margin-top: 2vh; width: 10vw">добавить</button>
                     </form>
                 </div>
@@ -187,7 +187,7 @@
                 <div class="block_l">
                     <form action="php/del_admin.php" method="post">
                         <label>удалить админа</label>
-                        <input name='id' onkeyup="find(value, 4)" type="text" placeholder="id чела">
+                        <input name='id' onkeyup="find_user(value, 4)" type="text" placeholder="id чела">
                         <button type="submit" style="margin-top: 2vh; width: 10vw">удалить</button>
                     </form>
                 </div>
@@ -241,7 +241,7 @@
 </body>
 <script src="assets/scripts/jquery-3.6.3.min.js"></script>
 <script>
-    function find(id, block_number){
+    function find_user(id, block_number){
         $.ajax({
             url: 'php/find_user.php',
             method: 'post',
@@ -281,6 +281,32 @@
         });
     }
 
+    function find_post(id){
+        $.ajax({
+            url: 'php/find_post.php',
+            method: 'post',
+            data: {id: id},
+            success: function(result){
+                let post = JSON.parse(result);
+                if (!(post === null)) {
+                    let post = JSON.parse(result);
+                    document.getElementById('avatar5').src = 'avatars/'+post['avatar'];
+                    document.getElementById('username').innerHTML = post['login'];
+                    document.getElementById('meme').src = "../posts/"+post['id']+".jpg";
+                    document.getElementById('text').innerHTML = post['text'];
+                    console.log(post['id']);
+                }
+                else {
+                    document.getElementById('avatar5').src = 'avatars/default.jpg';
+                    document.getElementById('username').innerHTML = 'запись не найдена';
+                    document.getElementById('meme').src = "/assets/img/preview.png";
+                    document.getElementById('text').innerHTML = '';
+                    console.log(post['id']);
+                }
+
+            }
+        })
+    }
     function panel_show(){
         elem = document.getElementById('panel_block' + i);
         for (j = 1; j <= 5; j++) {

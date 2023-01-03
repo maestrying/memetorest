@@ -6,6 +6,9 @@
         unlink('../posts/'.$_SESSION['meme'].'.jpg');
         unset($_SESSION['meme']);
     }
+    if(!isset($_SESSION['id'])){
+        header('Location: user/signIn.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,25 +33,52 @@
 
     <div class="content" style="background-color: #f2f2f2;">
         <div class="content_container" style="min-height: 82vh; flex-direction: column; padding: 4vh 0">
-            
-            <div class="post_mem_block">
-                <div class="post_mem_info">
-                    <div class="post_user_info">
-                        <div class="post_mem_info_ava">
-                            <img src="assets/img/скала.jpg" style="border-radius: 3px;" width="100%" height="100%"> <!-- тут ава -->
-                        </div>
-                        <div class="post_nick_descr">
-                            <div class="post_main_info">
-                                <p class="post_nick">login</p> <!-- тут имя пользователя -->
-                                <p class="post_date">01.01.1990</p>
+            <?php
+            $query = mysqli_query($conn, "select * from posts order by date desc");
+            if (isset($_SESSION['id'])) $user_id = $_SESSION['id'];
+
+            while ($post = $query->fetch_array()){
+                $published_by = $post['published_by'];
+                $find = mysqli_query($conn, "select * from users where id='$published_by'");
+                $result = $find->fetch_assoc();
+
+                $login = $result['login'];
+                $avatar = $result['avatar'];
+                $meme = $post['id'];
+                $text = $post['text'];
+                $date = $post['date'];
+                if (isset($_SESSION['id'])){
+                    $find_like = mysqli_query($conn, "select * from liked_memes where meme_id='$meme' and liked_by='$user_id'");
+                    $check = $find_like->fetch_assoc();
+                    if (!empty($check)){
+                        $like_status = 'добавил';
+                    }
+                    else {
+                        $like_status = 'годно';
+                    }
+                }
+                echo '
+                <div class="post_mem_block" id="'.$meme.'">
+                    <div class="post_mem_info">
+                        <div class="post_user_info">
+                            <div class="post_mem_info_ava">
+                                <img src="avatars/'.$avatar.'" style="border-radius: 3px;" width="100%" height="100%"> <!-- тут ава -->
                             </div>
-                            <p class="post_descr">когда позвал старшего брата на стрелуккогда позвал старшего брата на стрелукогда позвал старшего брата на стрелуогда позвал старшего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелукогда позвал старшего брата на стрелуккогда позвал старшего брата на стрелукогда позвал старшего брата на стрелуогда позвал старшего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелукогда позвал старшего брата на стрелуккогда позвал старшего брата на стрелукогда позвал старшего брата на стрелуогда позвал старшего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелутаршего брата на стрелукогда позвал старшего брата на стрелу</p> <!-- тут подпись мема -->
-                            <img src="assets/img/трах.jpg" class="post_img">
-                            <button class="post_like_btn">годно</button>
+                            <div class="post_nick_descr">
+                                <div class="post_main_info">
+                                    <p class="post_nick">'.$login.'</p> <!-- тут имя пользователя -->
+                                    <p class="post_date">'.$date.'</p>
+                                </div>
+                                <p class="post_descr">'.$text.'</p> <!-- тут подпись мема -->
+                                <img src="posts/'.$meme.'.jpg" class="post_img">
+                                <button class="post_like_btn" onclick="like('.$meme.')" id="'.$meme.'post_status">'.$like_status.'</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            ';
+            }
+            ?>
 
             <!-- <p class="p-bg main-p1">внимание мемы</p>
             <p class="p-bg main-p2">пикчи</p>
@@ -77,5 +107,24 @@
         </div>
     </footer>
 </body>
-<script> </script>
+<script src="assets/scripts/jquery-3.6.3.min.js"></script>
+<script>
+    function like(id){
+        $.ajax({
+            url: '../php/like.php',
+            method: 'post',
+            dataType: 'html',
+            data: {meme_id: id},
+            success: function(result){
+                if (result === 'liked'){
+                    document.getElementById(id + 'post_status').innerHTML = 'добавил';
+                }
+                else {
+                    document.getElementById(id + 'post_status').innerHTML = 'годно';
+                }
+                console.log(result);
+            }
+        });
+    }
+</script>
 </html>
