@@ -17,9 +17,17 @@
         $user = $query->fetch_assoc();
 
         if (!isset($user['login'])) {
-            header('Location: ../php/404.php');
+            header('Location: ../err/404.php');
         }
         else {
+            if ($user['is_blocked'] == '1') {
+                if ($user_id == $_SESSION['id']) {
+                    header('Location: ../php/logout.php');
+                }
+                else {
+                    header('Location: ../err/user_blocked.php');
+                }
+            }
             // получаем имя и статус пользователя
             $username = $user['login'];
             $avatar = $user['avatar'];
@@ -29,6 +37,7 @@
             $liked = $user['finded'];
             $subscribers = $user['subscribers'];
             $subscribes = $user['subscribes'];
+            $admin = $user['admin'];
         }
     }
 ?>
@@ -62,30 +71,30 @@
 
     <div class="content">
         <div class="content_container" style="min-height: 82vh; display: block;">
-            <div id="modal_mem">
-                <div class="mem_block">
-                    <div class="mem_info">
-                        <div class="mem_info_ava">
-                            <img src="../avatars/<?=$avatar?>" style="border-radius: 3px;" width="100%" height="100%"> <!-- тут ава -->
-                        </div>
-                        <div class="nick_descr">
-                            <p class="nick" style="color: #fff;"><?= $username ?></p> <!-- тут имя пользователя -->
-                            <p class="descr" style="color: #fff;">когда позвал старшего брата на стрелу</p> <!-- тут подпись мема -->
-                        </div>
-                    </div>
-
-                    <div class="mem_carousel">
-                        <div class="mem_img" style="align-items: center;">
-                            <img src="../assets/img/даун.jpg" style="border: 2px solid #1F3FEF; border-radius: 3px; width:20vw;"> <!-- тут мем -->
-                        </div>
-                    </div>
-
-                    <div class="profile_buttons">
-                        <button id="like_btn"">годно</button>
-                        <button id="close_btn" onclick="mem_window();"">закрыть</button>
-                    </div>
-                </div>
-            </div>
+<!--            <div id="modal_mem">-->
+<!--                <div class="mem_block">-->
+<!--                    <div class="mem_info">-->
+<!--                        <div class="mem_info_ava">-->
+<!--                            <img src="../avatars/--><?//=$avatar?><!--" style="border-radius: 3px;" width="100%" height="100%"> <!-- тут ава -->-->
+<!--                        </div>-->
+<!--                        <div class="nick_descr">-->
+<!--                            <p class="nick" style="color: #fff;">--><?//= $username ?><!--</p> -->
+<!--                            <p class="descr" style="color: #fff;">--><?//= $GLOBALS['text'] ?><!--</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="mem_carousel">-->
+<!--                        <div class="mem_img" style="align-items: center;">-->
+<!--                            <img src="../assets/img/даун.jpg" style="border: 2px solid #1F3FEF; border-radius: 3px; width:20vw;"> <!-- тут мем -->-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="profile_buttons">-->
+<!--                        <button id="like_btn"">годно</button>-->
+<!--                        <button id="close_btn" onclick="mem_window();"">закрыть</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
             <?php
                 $query = mysqli_query($conn, "select * from users where id='$user_id'");
                 $result = $query->fetch_assoc();
@@ -109,7 +118,9 @@
                             if ($_SESSION['id'] == $user_id){
                                 echo '<button onclick="edit()">редактировать</button>';
                                 echo '<button onclick="logout()">встать и выйти</button>';
-                                echo '<button onclick="logout()" class="admin_btn">аДмИнКа</button>';
+                                if ($user['admin'] == '1'){
+                                    echo '<button onclick="admin()" class="admin_btn">админ</button>';
+                                }
                             }
                             else {
                                 $user = $_SESSION['id'];
@@ -148,9 +159,34 @@
                 <div class="posts_content">
                     <p class="block_name">опубликованные пикчи</p>
                     <div class="posts">
+                        <?php
+                        $query = mysqli_query($conn, "select * from posts where published_by='$user_id' order by date desc");
+
+                        while ($post = $query->fetch_array()){
+                            $published_by = $post['published_by'];
+                            $find = mysqli_query($conn, "select * from users where id='$published_by'");
+                            $result = $find->fetch_assoc();
+
+                            $meme = $post['id'];
+
+                            echo '<div class="post_click" onclick="mem_window();"><img class="post" src="../posts/'.$meme.'.jpg" width="20%" height="80%"></img></div>';
+                        }
+                        ?>
                     </div>
                     <p class="block_name">понравившиеся пикчи</p>
                     <div class="posts">
+                        <?php
+                        $query = mysqli_query($conn, "select * from liked_memes where liked_by='$user_id'");
+
+                        while ($post = $query->fetch_array()){
+                            $meme_id = $post['meme_id'];
+                            $find = mysqli_query($conn, "select * from posts where id='$meme_id'");
+                            $result = $find->fetch_assoc();
+
+                            $meme = $result['id'];
+                            echo '<div class="post_click" onclick="mem_window();"><img class="post" src="../posts/'.$meme.'.jpg" width="20%" height="80%"></img></div>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -181,6 +217,9 @@
     }
     function edit(){
         location.href = 'profile_edit.php';
+    }
+    function admin(){
+        location.href = '../admin_panel.php';
     }
     function subscribe(id){
         $.ajax({

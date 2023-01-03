@@ -61,7 +61,7 @@
                         залей <br> сюда <br> свой <br> мем
                         <input class="drag_input" type="file" accept='.image/jpeg' name='meme' id='meme' onchange="create_meme()">
                     </div>
-                    <input type="text" name= 'text' placeholder="// тут твоя подпись к мемесу"  onkeyup="update_text()" id='input' maxlength="30" style="font-size: 11px; margin-top: 4vh;">
+                    <input type="text" name='text' placeholder="// тут твоя подпись к мемесу"  onkeyup="update_text()" id='input' maxlength="30" style="font-size: 11px; margin-top: 4vh;">
                     <button style="margin-top: 4vh; width: 16vw;" type="submit">показать миру</button>
                 </form>
             </div>
@@ -69,10 +69,10 @@
                 <div class="mem_block">
                     <div class="mem_info">
                         <div class="mem_info_ava">
-                            <img src="assets/img/скала.jpg" style="border-radius: 3px;" width="100%" height="100%"> <!-- тут ава -->
+                            <img src="avatars/<?=$avatar?>" style="border-radius: 3px;" width="100%" height="100%"> <!-- тут ава -->
                         </div>
                         <div class="nick_descr">
-                            <p class="nick">login</p> <!-- тут имя пользователя -->
+                            <p class="nick"><?=$username?></p> <!-- тут имя пользователя -->
                             <p class="descr" id="text">// тут твоя подпись к мемесу</p> <!-- тут подпись мема -->
                         </div>
                     </div>
@@ -125,7 +125,9 @@
             data: formData,
             success: function (data){
                 document.getElementById('preview').src = data;
+                console.log(data);
             }
+
 
         })
     }
